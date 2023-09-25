@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+
+  delivery_api:
+    build: ./services/delivery_api
+    container_name: delivery_api_container
+    command: python manage.py run -h 0.0.0.0
+    volumes:
+      - ./services/delivery_api/:/usr/src/app/
+    ports:
+      - "5001:5000"
+    env_file:
+      - ./.env.dev
+
+  notification_api:
+    build: ./services/notification_api
+    container_name: notification_api_container
+    command: python manage.py run -h 0.0.0.0
+    volumes:
+      - ./services/notification_api/:/usr/src/app/
+    ports:
+      - "5002:5000"
+    env_file:
+      - ./.env.dev
+
+  db_delivery:
+    image: postgres:13
+    container_name: postgres_delivery_container
+    volumes:
+      - postgres_data_delivery:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=raul
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=db_entregas
+      - SQL_HOST_DELIVERY=db_delivery
+
+  db_notification:
+    image: postgres:13
+    container_name: postgres_notifications_container
+    volumes:
+      - postgres_data_notification:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=raul
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=db_notificacoes
+      - SQL_HOST_NOTIFICATION=db_notification
+
+volumes:
+  postgres_data_delivery:
+  postgres_data_notification:
