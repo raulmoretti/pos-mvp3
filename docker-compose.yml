@@ -30,8 +30,8 @@ services:
     volumes:
       - postgres_data_delivery:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=raul
-      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=usuario
+      - POSTGRES_PASSWORD=senha
       - POSTGRES_DB=db_entregas
       - SQL_HOST_DELIVERY=db_delivery
 
@@ -41,8 +41,8 @@ services:
     volumes:
       - postgres_data_notification:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=raul
-      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=usuario
+      - POSTGRES_PASSWORD=senha
       - POSTGRES_DB=db_notificacoes
       - SQL_HOST_NOTIFICATION=db_notification
 
