@@ -1,5 +1,5 @@
 # Serviços de entrega e rastreamento de entrega
-Este projeto consiste em duas APIs REST que operam em uma arquitetura de microserviços. Cada API funciona de forma independente, além de usar as APIs do Google Maps (Google Matrix API) e do Mailjet para envio de e-mails.
+Este projeto consiste em duas APIs REST que operam em uma arquitetura de microserviços. Elas utilizam das APIs do Google Maps (Google Matrix API) e do Mailjet para envio de e-mails.
 
 ## Execução
 Para sua execução é necessário:
