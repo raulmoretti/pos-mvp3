@@ -19,10 +19,17 @@ DATABASE=postgres
 YOUR_API_KEY=SuaApiKeyDaGoogleMaps
 MAILJET_API_KEY=SuaApiKeyDaMailjet
 MAILJET_SECRET_KEY=SuaSecretKeyDaMailjet
-MAILJET_SENDER_EMAIL=EmailDaPessoaQueEnvia
+MAILJET_SENDER_EMAIL=emaildapessoaqueenvia@email.com
 MAILJET_SENDER_NAME=NomeDaPessoaQueEnvia
 ```
 3. Abra o terminal na raiz do projeto e digite o seguinte comando:
 ```sh
 docker-compose up --build
 ```
+O comando acima, inserido no terminal da raiz do projeto, instrui o Docker Compose a construir e iniciar o aplicativo Docker. O flag `--build` garante a construção das imagens antes de iniciar os contêineres, ideal para quando se incia a aplicação pela primeira vez ou após alterações computacionais. Utilizando as diretivas do arquivo `docker-compose.yml` localizado na raiz do projeto, o Docker Compose se encarrega de construir a aplicação e iniciar todos os serviços requeridos para rodar a mesma, como banco de dados e servidor web. Após completa execução, a aplicação será acessível na porta indicada no arquivo Docker Compose.
+
+4. Documentação pode ser encontrada em:
+- API de Entregas: http://localhost:5001/swagger
+- API de Notificações: http://localhost:5002/swagger
+
+Para o teste das APIs pode ser utilizado softwares como Postman e Insomnia.
